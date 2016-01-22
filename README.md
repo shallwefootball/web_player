@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/shallwefootball/web_player.png?label=ready&title=Ready)](https://waffle.io/shallwefootball/web_player)
 # 공찰래리그 player
 
 ## 공찰래리그란?
