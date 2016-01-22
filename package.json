@@ -1,0 +1,14 @@
+{
+  "name": "19_1_sf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "19_1_sf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  }
+}
