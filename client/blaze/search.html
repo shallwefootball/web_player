@@ -1,0 +1,44 @@
+<template name="search">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="input-group">
+        <input id="search" type="text" class="form-control" aria-label="...">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="input-group">
+        <select class="form-control">
+          <option>전체</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ready?</th>
+        <th>이름</th>
+        <th>소속팀</th>
+        <th>경기수</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each registerUsers this}}
+        <tr>
+          <td></td>
+          <td>{{playerName}}</td>
+          <td>{{clubName}}</td>
+          <td>9</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
