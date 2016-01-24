@@ -1,7 +1,144 @@
 <head>
   <meta charset="utf-8">
   <title>⚽️ sf-alpha</title>
+
+  <style>
+    @media (min-width: 768px) {
+      .container {
+        max-width: 730px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div id="container" class="container"></div>
+
+  <div class="container">
+    <!-- {{> login}} -->
+    <!-- {{> signup}} -->
+    {{> loginButtons}}
+  </div>
+
 </body>
+
+<template name="login">
+
+  <style>
+    .logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+      margin-bottom: 18px;
+    }
+    #loginbox,
+    #signupbox {
+      margin-top: 50px;
+    }
+    #loginbox .panel-body,
+    #signupbox .panel-body {
+      padding-top: 30px;
+    }
+    .input-group {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+
+  <div id="loginbox" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <a href="/"><img class="logo" src="/img/logo.png"></a>
+              <div class="panel-title">선수 로그인</div>
+              <!-- <div id="forgetPassword"><a href="#">비밀번호를 까먹었다.</a></div> -->
+          </div>
+          <div class="panel-body" >
+              <form id="login" class="form-horizontal" role="form" method="post" action="/login"  data-parsley-validate>
+                  <div class="form-group">
+                      <div class="col-sm-12 col-md-12 col-xs-12">
+                          <input type="email" class="form-control" name="email" placeholder="이메일" autofocus>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-12 col-md-12 col-xs-12">
+                          <input id="login-password" type="password" class="form-control" name="password" placeholder="비밀번호">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <!-- Button -->
+                      <div class="col-sm-12 controls">
+                          <button type="submit" id="btn-login" class="btn btn-success btn-block">로그인  </button>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-md-12">
+                          <!--
+                          <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                              아이디가 없다면?
+                              <a href="/signup">
+                                  선수등록!
+                              </a>
+                          </div>
+                          -->
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</template>
+
+
+
+<template name="signup">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"></div>
+            <a href="/"><img class="logo" src="/img/logo.png"></a>
+            <div class="panel-title">선수등록</div>
+        </div>
+        <div class="panel-body" >
+
+            <form id="signup" action="/signup" enctype="multipart/form-data" method="post" class="form" role="form" data-parsley-validate>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <input class="form-control" name="lastName" placeholder="성" type="text" autofocus/>
+                        </div>
+                        <div class="col-xs-6 col-md-6">
+                            <input class="form-control" name="firstName" placeholder="이름" type="text"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" name="email" placeholder="이메일" type="email" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="password" name="password" placeholder="비밀번호" type="password" />
+                    <p class="help-block">비밀번호 6자리로 바꾸기</p>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="confirmPassword" placeholder="비빌번호 확인" type="password"  />
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="birthday" placeholder="생일" />
+                    <p class="help-block">YYYY/MM/DD <small>ex) 1988/04/09</small></p>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-info btn-block">선수등록</button>
+                </div>
+
+                <div class="form-group">
+                    <div id="login" class="col-md-12">선수등록이 되어있다면
+                        <a href="/login">
+                            로그인!
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</template>
+

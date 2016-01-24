@@ -5,7 +5,9 @@
 # but you can also edit it by hand.
 
 meteor-base             # Packages every Meteor app needs to have
-static-html
+blaze-html-templates
+# static-html
+
 mongo                   # The database Meteor supports right now
 session                 # Client-side reactive dictionary for your app
 
@@ -13,11 +15,15 @@ session                 # Client-side reactive dictionary for your app
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
-react
+twbs:bootstrap
 
 modules
 
-bootstrap
-less
 
-# sf:bootswatch-paper
+accounts-base
+accounts-password
+accounts-ui
+
+email
+
+force-ssl

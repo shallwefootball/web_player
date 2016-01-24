@@ -10,5 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "nodemailer": "^2.0.0"
   }
 }
