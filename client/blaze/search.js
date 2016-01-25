@@ -6,17 +6,24 @@ Template.search.helpers({
   registerUsers: function(param) {
     console.log('arguments  : ', arguments);
     return registerUsers.reactive();
+  },
+  currentCount: function() {
+    console.log('registerUsers.length  : ', registerUsers.length);
+    return registerUsers.reactive().length;
   }
 })
 
 Template.search.events({
-  'keyup #search': function(e) {
+  'keyup input[name="search"]': function(e) {
+    var player = e.currentTarget.value;
+    var team = $('select[name="team"]').val();
 
-    console.log('e  : ', e);
-    console.log('e.currentTarget.value  : ', e.currentTarget.value);
-    var val = e.currentTarget.value;
+    registerUsers.change(player, team);
+  },
+  'change select[name="team"]': function(e) {
+    var player = $('input[name="player"]').val();
+    var team = e.currentTarget.value;
 
-    registerUsers.change(val);
-
+    registerUsers.change(player, team);
   }
 })
