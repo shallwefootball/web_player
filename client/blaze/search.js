@@ -1,7 +1,5 @@
 var registerUsers = (new MysqlSubscription('registerUsers'));
 
-console.log('registerUsers  : ', registerUsers);
-
 Template.search.helpers({
   registerUsers: function(param) {
     console.log('arguments  : ', arguments);
